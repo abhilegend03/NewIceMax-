@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Ice Max | Premium Ice Cream Machinery</title>
+    <style>
+        /* Modern CSS Reset & Variables */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --bg-dark: #0f172a;
+            --bg-card: #1e293b;
+            --neon-blue: #38bdf8;
+            --neon-mint: #34d399;
+            --text-light: #f8fafc;
+            --text-muted: #94a3b8;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+            padding-bottom: 60px; /* Space for fixed WhatsApp button */
+        }
+
+        /* Header / Navigation */
+        header {
+            background: linear-gradient(135deg, #1e293b, #0f172a);
+            border-bottom: 2px solid var(--neon-blue);
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(56, 189, 248, 0.15);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            color: #fff;
+            text-transform: uppercase;
+        }
+
+        header h1 span {
+            color: var(--neon-blue);
+            text-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
+        }
+
+        header .subtitle {
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin-top: 0.5rem;
+        }
+
+        header .header-meta {
+            margin-top: 0.8rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        header .proprietor {
+            color: var(--neon-mint);
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        header .meta-link {
+            color: var(--text-light);
+            font-size: 1rem;
+            font-weight: 500;
+            text-decoration: none;
+        }
+
+        header .meta-link:hover {
+            color: var(--neon-blue);
+        }
+
+        /* Main Layout */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--neon-mint);
+            margin: 0.5rem auto 0;
+            border-radius: 2px;
+        }
+
+        /* Product Grid */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+
+        /* Product Card */
+        .product-card {
+            background-color: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(52, 211, 153, 0.15);
+            border-color: var(--neon-mint);
+        }
+
+        /* Placeholder Graphic for Visual Anchor */
+        .product-image-placeholder {
+            height: 220px;
+            background: linear-gradient(45deg, #1e293b, #334155);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--neon-blue);
+            font-weight: bold;
+            font-size: 1.2rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            text-align: center;
+            padding: 0 1rem;
+        }
+
+        /* Responsive Product Image style */
+        .product-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .product-info {
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .product-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+
+        .product-spec {
+            font-size: 0.95rem;
+            color: var(--neon-blue);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .product-desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .product-price {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: var(--neon-mint);
+            margin-bottom: 1.5rem;
+        }
+
+        .btn-inquire {
+            display: inline-block;
+            background-color: transparent;
+            color: var(--text-light);
+            border: 2px solid var(--neon-blue);
+            padding: 0.8rem 1.5rem;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.2s ease;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-decoration: none;
+        }
+
+        .btn-inquire:hover {
+            background-color: var(--neon-blue);
+            color: var(--bg-dark);
+            box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
+        }
+
+        /* Floating WhatsApp Button */
+        .whatsapp-floating {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            z-index: 1000;
+            transition: transform 0.2s ease;
+        }
+
+        .whatsapp-floating:hover {
+            transform: scale(1.05);
+            background-color: #20ba5a;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            background-color: #0b111e;
+            color: var(--text-muted);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 0.9rem;
+        }
+        
+        footer .owner-footer {
+            margin-top: 0.5rem;
+            color: var(--neon-blue);
+            font-weight: 600;
+        }
+
+        footer .address-footer, footer .phone-footer {
+            margin-top: 0.5rem;
+            color: var(--text-muted);
+        }
+
+        footer .phone-footer a {
+            color: var(--neon-mint);
+            text-decoration: none;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>New <span>Ice Max</span></h1>
+        <p class="subtitle">High-Performance Ice Cream & Refrigeration Machinery</p>
+        <div class="header-meta">
+            <p class="proprietor">Prop: Nitu Kumari</p>
+            <a href="tel:9334412481" class="meta-link">📞 Call: 9334412481</a>
+            <p class="meta-link">📍 Kadam Kuan, Patna, Bihar</p>
+        </div>
+    </header>
+
+    <main>
+        <h2 class="section-title">Our Equipment Lineup</h2>
+        
+        <div class="product-grid">
+            
+            <!-- Item 1 -->
+            <div class="product-card">
+                <div class="product-image-placeholder">ICE LOLLY TANK</div>
+                <div class="product-info">
+                    <h3 class="product-title">Ice Lolly Tank</h3>
+                    <p class="product-spec">Capacity: 12 Farma</p>
+                    <p class="product-desc">Heavy-duty industrial cooling tank engineered for fast freezing and high-volume ice lolly production output.</p>
+                    <div class="product-price">₹2,65,000</div>
+                    <a href="https://wa.me" target="_blank" class="btn-inquire">Inquire on WhatsApp</a>
+                </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="product-card">
+                <div class="product-image-placeholder">COMMERCIAL CHURNER</div>
+                <div class="product-info">
+                    <h3 class="product-title">Heavy Duty Churner</h3>
+                    <p class="product-spec">Capacity: 2.5 Gallon</p>
+                    <p class="product-desc">Premium grade mixing mechanism designed to achieve the perfect texture, overrun, and consistency for commercial ice cream.</p>
+                    <div class="product-price">₹1,45,000</div>
+                    <a href="https://wa.me" target="_blank" class="btn-inquire">Inquire on WhatsApp</a>
+                </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="product-card">
+                <div class="product-image-placeholder">DEEP FREEZER TROLLY</div>
+                <div class="product-info">
+                    <h3 class="product-title">Mobile Freezer Trolley</h3>
+                    <p class="product-spec">Capacity: 125 Liters</p>
+                    <p class="product-desc">High-mobility, rugged transport trolley integrated with a reliable deep freezer unit for reliable outdoor or event vending.</p>
+                    <div class="product-price">₹46,000</div>
+                    <a href="https://wa.me" target="_blank" class="btn-inquire">Inquire on WhatsApp</a>
+                </div>
+            </div>
+
+            <!-- Item 4 -->
+            <div class="product-card">
+                <div class="product-image-placeholder">PAD MACHINE</div>
+                <div class="product-info">
+                    <h3 class="product-title">Pad Machine</h3>
+                    <p class="product-spec">Commercial Grade</p>
+                    <p class="product-desc">High-efficiency production pad system engineered for precision manufacturing and reliable day-to-day operations.</p>
+                    <div class="product-price">₹1,45,000</div>
+                    <a href="https://wa.me" target="_blank" class="btn-inquire">Inquire on WhatsApp</a>
+                </div>
+            </div>
+
+            <!-- Item 5 (Now with Real Image) -->
+            <div class="product-card">
+                <img src="erickshaw.jpg" alt="Ice Cream E-Rickshaw by New IceMax" class="product-img">
+                <div class="product-info">
+                    <h3 class="product-title">E-Rickshaw with Deep Freezer</h3>
+                    <p class="product-spec">Mobile Ice Cream Unit</p>
+                    <p class="product-desc">Discover the new generation of ice cream sales. Eco-friendly commercial electric rickshaw equipped with zero emissions, powerful integrated deep freezer, and stunning graphics.</p>
+                    <div class="product-price">₹1,84,000</div>
+                    <a href="https://wa.me" target="_blank" class="btn-inquire">Inquire on WhatsApp</a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Floating General WhatsApp Button -->
+    <a href="https://wa.me." class="whatsapp-floating" target="_blank">
+        💬 Chat With Us
+    </a>
+
+    <footer>
+        <p>&copy; 2026 New Ice Max. All rights reserved.</p>
+        <p class="owner-footer">Proprietor: Nitu Kumari</p>
+        <p class="phone-footer">Contact: <a href="tel:9334412481">9334412481</a></p>
+        <p class="address-footer">Address: Kadam Kuan, Patna, Bihar</p>
+    </footer>
+
+</body>
+</html>
